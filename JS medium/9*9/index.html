@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9*9</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px solid #333;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+        th{
+            background: #1cb8ec;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <input id="input1" type="number"min="1" max="9" style="width:50px;">
+    <span>x</span>
+    <input id="input2" type="number"min="1" max="9" style="width:50px;">
+    <button id="equals" style="width: 70px;height:20px;">=</button>
+    <button id="reset" style="width: 70px;height:40px;">リセット</button>
+    <table id="table"></table>
+
+    <script>
+        'use strict';
+        const table=document.getElementById('table');
+        const input1 = document.getElementById('input1');
+        const input2 = document.getElementById('input2');
+        const MAX=9;
+        for(let i=0;i<=MAX;i++){
+            let tr=document.createElement('tr');
+            for(let j=0;j<=MAX;j++){
+                let ele;
+                if(i===0){
+                    ele=document.createElement('th');
+                    if(j===0){
+                        ele.textContent='X'
+                    }else{
+                        ele.textContent=j;
+                    }
+                }else{
+                    if(j===0){
+                        ele=document.createElement('th');
+                        ele.textContent=i;
+                    }else{
+                        ele=document.createElement('td');
+                        ele.textContent=i*j;
+                        ele.id=`cell-${i}-${j}`;
+                    }
+                }
+                tr.appendChild(ele);
+            }
+            table.appendChild(tr);
+        }
+
+        document.getElementById('equals').addEventListener('click',function(){
+
+            const cell = document.getElementById(`cell-${input1.value}-${input2.value}`)
+            if(cell){
+                cell.style.backgroundColor='orange';
+            }
+        });
+
+        document.getElementById('reset').addEventListener('click',function(){
+            for(let i=1;i<=MAX;i++){
+                for(let j=1;j<=MAX;j++){
+                    const cell=document.getElementById(`cell-${i}-${j}`);
+                    if(cell){
+                        cell.style.backgroundColor='';
+                    }
+                }
+            }
+            input1.value=""
+            input2.value=""
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+body{
+    text-align: center;
+}
+
+p{
+    display: inline-block;
+    justify-content: center;
+    font-size: 40px;
+    letter-spacing: 1.0em;
+    padding-left: 25px;
+}
+
+#setTime{
+    width: 100;
+}
+
+#startTimer{
+    display: block;
+    margin: 0 auto;
+}
+
+.slot-wrap{
+    height: 160px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.middle-slot{
+    background-color: aquamarine;
+}

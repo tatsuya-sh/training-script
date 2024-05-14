@@ -1,0 +1,52 @@
+body{
+    background-color: lightblue;
+}
+
+.scoreboard{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#nextPlayer{
+    font-size: larger;
+    color: black;
+    background-color: #ff6347;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 1px;
+}
+
+#cardgrid{
+    width: 90%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(13,1fr);
+    gap: 0.5vh;
+}
+
+div.card{
+    aspect-ratio: 2/3;
+    /* background-color: yellow; */
+    background-size: contain;
+}
+
+div.back{
+    background-image: url(./images/z01.gif) !important;
+}
+
+@keyframes fadeout {
+    40%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+    
+}
+div.fadeout{
+    animation-name: fadeout;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}

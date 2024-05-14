@@ -1,0 +1,44 @@
+body{
+    font-family: Arial,sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+#todo,#completedTodo{
+    list-style-type: none;
+    padding: 0;
+}
+
+#todoSection,#completedSection{
+    width: 50%;
+}
+
+#todoSection{
+    float: right;
+}
+
+#completedTask{
+    float: left;
+}
+
+li{
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button{
+    margin-left: 20px;
+}
+
+select{
+    margin-left: 20px;
+}
+
+/* .lists{
+    list-style: none;
+} */
